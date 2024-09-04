@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Dictionary.css'; 
+import './Dictionary.css';
 
 function Dictionary() {
   const [dictionary] = useState([
@@ -13,7 +13,7 @@ function Dictionary() {
 
   const handleSearch = () => {
     if (searchTerm.trim() === '') {
-        setResult('Please enter a word to search.');
+        setResult('Word not found in the dictionary.');
         return;
     }
 
@@ -40,12 +40,8 @@ function Dictionary() {
         Search
       </button>
       <div className="result">
-        {result && (
-          <>
-            <h3>Definition:</h3>
-            <p>{result}</p>
-          </>
-        )}
+        <h3>Definition:</h3>
+        <p>{result || "No definition found."}</p>
       </div>
     </div>
   );
