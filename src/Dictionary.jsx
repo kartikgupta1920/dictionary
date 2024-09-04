@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Dictionary.css'; // Import the CSS file
+import './Dictionary.css'; 
 
 function Dictionary() {
   const [dictionary] = useState([
@@ -40,8 +40,12 @@ function Dictionary() {
         Search
       </button>
       <div className="result">
-        <h3>Definition:</h3>
-        {result}
+        {result && (
+          <>
+            <h3>Definition:</h3>
+            <p>{result}</p>
+          </>
+        )}
       </div>
     </div>
   );
