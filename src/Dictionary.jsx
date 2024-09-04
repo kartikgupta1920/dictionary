@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Dictionary.css'; // Import the CSS file
 
 function Dictionary() {
   const [dictionary] = useState([
@@ -23,22 +24,22 @@ function Dictionary() {
     } else {
         setResult("Word not found in the dictionary.");
     }
-};
+  };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Dictionary App</h1>
+    <div className="container">
+      <h1 className="title">Dictionary App</h1>
       <input
         type="text"
         placeholder="Search for a word..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ marginRight: '10px', padding: '5px' }}
+        className="input"
       />
-      <button onClick={handleSearch} style={{ padding: '5px 10px' }}>
+      <button onClick={handleSearch} className="button">
         Search
       </button>
-      <div style={{ marginTop: '20px', fontSize: '16px' }}>
+      <div className="result">
         {result}
       </div>
     </div>
