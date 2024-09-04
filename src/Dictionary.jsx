@@ -12,18 +12,18 @@ function Dictionary() {
 
   const handleSearch = () => {
     if (searchTerm.trim() === '') {
-      setResult('Please enter a word to search.');
-      return;
+        setResult('Please enter a word to search.');
+        return;
     }
 
     const foundWord = dictionary.find(entry => entry.word.toLowerCase() === searchTerm.toLowerCase());
 
     if (foundWord) {
-      setResult(foundWord.meaning);
+        setResult(`Definition: ${foundWord.meaning}`);
     } else {
-      setResult("Word not found in the dictionary.");
+        setResult("Word not found in the dictionary.");
     }
-  };
+};
 
   return (
     <div style={{ padding: '20px' }}>
@@ -39,7 +39,7 @@ function Dictionary() {
         Search
       </button>
       <div style={{ marginTop: '20px', fontSize: '16px' }}>
-        <h2>Defination</h2>{result}
+        {result}
       </div>
     </div>
   );
