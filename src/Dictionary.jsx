@@ -20,7 +20,7 @@ function Dictionary() {
     const foundWord = dictionary.find(entry => entry.word.toLowerCase() === searchTerm.toLowerCase());
 
     if (foundWord) {
-        setResult(`Definition: ${foundWord.meaning}`);
+        setResult(foundWord.meaning);
     } else {
         setResult("Word not found in the dictionary.");
     }
@@ -40,6 +40,7 @@ function Dictionary() {
         Search
       </button>
       <div className="result">
+        <h3>Defination:</h3>
         {result}
       </div>
     </div>
