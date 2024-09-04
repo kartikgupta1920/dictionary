@@ -40,7 +40,7 @@ function Dictionary() {
         Search
       </button>
       <div className="result">
-        <h3>Defination:</h3>
+        <h3>Definition:</h3>
         {result}
       </div>
     </div>
